@@ -56,8 +56,7 @@ def main(page: ft.Page):
                 ], alignment=ft.MainAxisAlignment.CENTER, horizontal_alignment=ft.CrossAxisAlignment.CENTER),
                 alignment=ft.alignment.center,
                 padding=10,
-                # FIXED FOR WEB HOSTING: Uses relative root folder paths and enforces browser rendering
-                on_click=lambda e: page.launch_url(f"{file_name}", web_browser=True), 
+                on_click=lambda e: page.launch_url(f"assets/{file_name}", web_browser=True), 
                 ink=True
             )
         )
@@ -90,7 +89,7 @@ def main(page: ft.Page):
                 controls=[
                     ft.Container(
                         content=ft.Image(
-                            src="zera.JPG", 
+                            src="assets/zera.JPG", 
                             fit=ft.ImageFit.CONTAIN,
                             border_radius=12,
                         ),
@@ -209,6 +208,7 @@ def main(page: ft.Page):
                 child_aspect_ratio=0.95,
                 spacing=15,
                 run_spacing=15,
+                # FIXED FOR PROFESSIONAL DISPLAY: Explicit certification naming structures mapped out
                 controls=[
                     create_certificate_card("MATLAB Onramp", "certificate1.pdf"),
                     create_certificate_card("Simulink Onramp", "certificate2.pdf"),
@@ -328,4 +328,4 @@ def main(page: ft.Page):
     )
 
 if __name__ == "__main__":
-    ft.app(target=main, assets_dir="assets")
+    ft.app(target=main)
